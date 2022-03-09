@@ -18,14 +18,20 @@ generateBtn.onclick = function () {
   if (promptLength >=8 && promptLength <=128) {
     window.alert("You chose " + promptLength + " characters");
         
+    confirmPasswordSpecs();
+
+
   }
   else {
     window.alert ("Invalid Entry, please try again");
     generateBtn.onclick();
+    
+  }
   
-     
-  
-    var promptLower=window.confirm("Please choose whether or not you would like lowercase letters in your password.");
+}
+
+function confirmPasswordSpecs() {
+  var promptLower=window.confirm("Please choose whether or not you would like lowercase letters in your password.");
     console.log("promptLower", promptLower);
 
     var promptUpper=window.confirm("Please choose whether or not you would like uppercase letters in your password.");
@@ -36,8 +42,13 @@ generateBtn.onclick = function () {
 
     var promptSymbol=window.confirm("Please choose whether or not you would like symbols in your password.");
     console.log("promptSymbol", promptSymbol);
-  }
-} 
+
+}
+ 
+//console.log = (promptUpper.alphaUpper + promptLower.alphaLower + promptNumber.numbers + promptSymbol.symbols);
+//for (var i=0; i < promptLength; i++)  {
+
+//}
 
 // Write password to the #password input
 function writePassword() {

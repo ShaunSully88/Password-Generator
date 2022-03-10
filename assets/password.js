@@ -1,13 +1,13 @@
 // Assignment code here
 var numbers='0123456789';
-var alphaLower='abcdefghijklmnopqrstuvwxyz';
-var alphaUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var alpha='abcdefghijklmnopqrstuvwxyz';
 var symbols= '!@#$%^&*_+-=';
 
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
 
 generateBtn.onclick = function () {
   window.alert("Please select password criteria when prompted."); 
@@ -18,7 +18,11 @@ generateBtn.onclick = function () {
   if (promptLength >=8 && promptLength <=128) {
     window.alert("You chose " + promptLength + " characters");
         
-    confirmPasswordSpecs();
+    var passwordSpecs = confirmPasswordSpecs(); 
+    console.log(passwordSpecs)
+
+    writePassword(passwordSpecs, promptLength);
+
 
 
   }
@@ -42,16 +46,19 @@ function confirmPasswordSpecs() {
 
     var promptSymbol=window.confirm("Please choose whether or not you would like symbols in your password.");
     console.log("promptSymbol", promptSymbol);
-
+   return {promptLower, promptUpper, promptNumber, promptSymbol};
+   
 }
  
-//console.log = (promptUpper.alphaUpper + promptLower.alphaLower + promptNumber.numbers + promptSymbol.symbols);
-//for (var i=0; i < promptLength; i++)  {
 
-//}
+for (var i=0; i < promptLength; i++)  {
+
+  password = password + alphaLower.charAt(Math.floor(math.rnadom() * alpha.length))
+
+}
 
 // Write password to the #password input
-function writePassword() {
+function writePassword(passwordSpecs, promptLength) {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 

@@ -1,67 +1,49 @@
 // Assignment code here
-var numbers='0123456789';
-var alphaLower='abcdefghijklmnopqrstuvwxyz';
-var alphaUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var symbols= '!@#$%^&*_+-=';
 
-
-
-
-// Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-var generatePassowrd = function() {
-  for (var i= 0; i < prompt.length; i++) {
-    promptLength.length + promptUpper + promptLower + promptNumber + promptSymbol;
-}
+var generatePassword = function () {
+  
+  var pwlength = window.prompt ("Please choose a number between 8 and 128.");
+  
 
-return password;
-};
+  if (pwlength >=8 && pwlength <=128) {
+    window.alert("You chose " + pwlength + " characters");
+    console.log("Your password will be " + pwlength + " characters long.")
 
-generateBtn.onclick = function () {
-  window.alert("Please select password criteria when prompted."); 
+     var alphaLower = "abcdefghijklmnopqrstuvwxyz";
+    window.prompt ("Would you like Lowercase letters in your password? Click OK for Yes, click Cancel for No");
+    console.log("alphaLower", alphaLower);
+  
+
+    var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    window.prompt ("Would you like Uppercase letters in your password? Click OK for Yes, click Cancel for No");
+    console.log("alphaUpper", alphaUpper)
+   
+
+    var numeric = "0123456789";
+    window.prompt ("Would you like Numbers in your password? Click OK for Yes, click Cancel for No");
+    console.log("Numeric", numeric);
     
-  var promptLength= window.prompt("Please choose length of password. Must be between 8 and 128 characters");
-  console.log("promptLength", promptLength);
-        
-  if (promptLength >=8 && promptLength <=128) {
-    window.alert("You chose " + promptLength + " characters");
-        
-    var passwordSpecs = confirmPasswordSpecs(); 
-    console.log(passwordSpecs)
-
-    writePassword(passwordSpecs, promptLength);
-
-  }
-  else {
-    window.alert ("Invalid Entry, please try again");
-    generateBtn.onclick();
+    var symbol = "!@#$%^&*+-";
+    window.prompt ("Would you like Symbols in your password? Click OK for Yes, click Cancel for No");
+    console.log("symbol", symbol);
     
-  }
+  }  else {
+      window.alert ("Invalid Entry, please try again");
+      generatePassword();
+        
+    };
+    
+ 
+  
+  
+  
   
 }
 
-function confirmPasswordSpecs() {
-  var promptLower=window.confirm("Please choose whether or not you would like lowercase letters in your password.");
-    console.log("promptLower", promptLower);
-    
 
-    var promptUpper=window.confirm("Please choose whether or not you would like uppercase letters in your password.");
-    console.log("promptUpper", promptUpper);
-    
-
-    var promptNumber=window.confirm("Please choose whether or not you would like numbers in your password.");
-    console.log("promptNumber", promptNumber);
-    
-
-    var promptSymbol=window.confirm("Please choose whether or not you would like symbols in your password.");
-    console.log("promptSymbol", promptSymbol);
-   return {promptLower, promptUpper, promptNumber, promptSymbol};
-   
-}
  
-
-
 
 
 // Write password to the #password input

@@ -1,13 +1,22 @@
 // Assignment code here
 var numbers='0123456789';
-var alpha='abcdefghijklmnopqrstuvwxyz';
+var alphaLower='abcdefghijklmnopqrstuvwxyz';
+var alphaUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var symbols= '!@#$%^&*_+-=';
+
 
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+var generatePassowrd = function() {
+  for (var i= 0; i < prompt.length; i++) {
+    promptLength.length + promptUpper + promptLower + promptNumber + promptSymbol;
+}
+
+return password;
+};
 
 generateBtn.onclick = function () {
   window.alert("Please select password criteria when prompted."); 
@@ -23,8 +32,6 @@ generateBtn.onclick = function () {
 
     writePassword(passwordSpecs, promptLength);
 
-
-
   }
   else {
     window.alert ("Invalid Entry, please try again");
@@ -37,12 +44,15 @@ generateBtn.onclick = function () {
 function confirmPasswordSpecs() {
   var promptLower=window.confirm("Please choose whether or not you would like lowercase letters in your password.");
     console.log("promptLower", promptLower);
+    
 
     var promptUpper=window.confirm("Please choose whether or not you would like uppercase letters in your password.");
     console.log("promptUpper", promptUpper);
+    
 
     var promptNumber=window.confirm("Please choose whether or not you would like numbers in your password.");
     console.log("promptNumber", promptNumber);
+    
 
     var promptSymbol=window.confirm("Please choose whether or not you would like symbols in your password.");
     console.log("promptSymbol", promptSymbol);
@@ -51,14 +61,11 @@ function confirmPasswordSpecs() {
 }
  
 
-for (var i=0; i < promptLength; i++)  {
 
-  password = password + alphaLower.charAt(Math.floor(math.rnadom() * alpha.length))
 
-}
 
 // Write password to the #password input
-function writePassword(passwordSpecs, promptLength) {
+function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -68,5 +75,4 @@ function writePassword(passwordSpecs, promptLength) {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 

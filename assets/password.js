@@ -1,72 +1,50 @@
 // Assignment code here
+var alphaLower = "abcdefghijklmnopqrstuvwxyz";
+var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numeric = "0123456789";
+var symbol = "!@#$%^&*+-";
+var wantsLowercase;
+var pwlength;
+var wantsUppercase;
+var wantsNumeric;
+var wantsSymbol;
+var buildPassword = "";
+var poolBuild = "";
 
 var generateBtn = document.querySelector("#generate");
-
 var generatePassword = function () {
   
-  var pwlength = window.prompt ("Please choose a number between 8 and 128.");
+   pwlength = window.prompt ("Please choose a number between 8 and 128.");
   
-
   if (pwlength >=8 && pwlength <=128) {
-    window.alert("You chose " + pwlength + " characters");
+    window.alert("Your password will be " + pwlength + " characters long.");
     console.log("Your password will be " + pwlength + " characters long.")
-  }  else {
-    window.alert ("Invalid Entry, please try again");
-    generatePassword();
       
-  };
-
-     var alphaLower = "abcdefghijklmnopqrstuvwxyz";
-    window.prompt ("Would you like lowercase letters in your password? Click OK for Yes, click Cancel for No");
-    console.log("alphaLower", alphaLower);
-
-    if (alphaLower = true) {
-       window.alert("You will have lowercase letters in your password.");
-    } else {
-      window.alert("You will have no lowercase letters in your password.");
-    } 
-  
-
-    var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    window.prompt ("Would you like uppercase letters in your password? Click OK for Yes, click Cancel for No");
-    console.log("alphaUpper", alphaUpper)
-
-    if (alphaUpper = true) {
-      window.alert("You will have uppercase letters in your password.");
-    } else {
-      window.alert("You will have no uppercase letters in your password.");
-    }
-   
-
-    var numeric = "0123456789";
-    window.prompt ("Would you like Numbers in your password? Click OK for Yes, click Cancel for No");
-    console.log("Numeric", numeric);
-
-    if (numeric = true) {
-      window.alert("You will have numbers in your password");
-    } else {
-      window.alert("You will have no numbers in your password.");
-    }
-    
-    var symbol = "!@#$%^&*+-";
-    window.prompt ("Would you like Symbols in your password? Click OK for Yes, click Cancel for No");
-    console.log("symbol", symbol);
-
-    if (symbol = true)  {
-      window.alert("You will have symbols in your password.");
-    } else {
-      window.alert("You will have no symbols in your password.");
-    };
-    
-  
-    
+     wantsLowercase = window.confirm("Would you like lowercase letters in your password? Click OK for Yes, click Cancel for No");
+     console.log("alphaLower", wantsLowercase);
  
-  
-  
-  
+    wantsUppercase = window.confirm ("Would you like uppercase letters in your password? Click OK for Yes, click Cancel for No");
+     console.log("alphaUpper", wantsUppercase)
+
+    wantsNumeric = window.confirm ("Would you like Numbers in your password? Click OK for Yes, click Cancel for No");
+    console.log("Numeric", wantsNumeric);
+ 
+    wantsSymbol = window.confirm ("Would you like Symbols in your password? Click OK for Yes, click Cancel for No");
+    console.log("symbol", wantsSymbol);
+
+  }  else {
+      window.alert ("Invalid Entry, please try again");
+      generatePassword();
+}
+};
+
+function createPassword() {
+for (var i = 0; i < pwlength; i++) {
+  poolBuild[]  
   
 }
 
+}
 
  
 

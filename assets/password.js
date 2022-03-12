@@ -3,20 +3,21 @@ var alphaLower = "abcdefghijklmnopqrstuvwxyz";
 var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numeric = "0123456789";
 var symbol = "!@#$%^&*+-";
-var wantsLowercase;
 var pwlength;
+var wantsLowercase;
 var wantsUppercase;
 var wantsNumeric;
 var wantsSymbol;
 var buildPassword = "";
 var poolBuild = "";
+var createPassword;
 
 var generateBtn = document.querySelector("#generate");
 var generatePassword = function () {
   
    pwlength = window.prompt ("Please choose a number between 8 and 128.");
   
-  if (pwlength >=8 && pwlength <=128) {
+  if(pwlength >=8 && pwlength <=128) {
     window.alert("Your password will be " + pwlength + " characters long.");
     console.log("Your password will be " + pwlength + " characters long.")
       
@@ -38,13 +39,27 @@ var generatePassword = function () {
 }
 };
 
-function createPassword() {
-for (var i = 0; i < pwlength; i++) {
-  poolBuild[]  
-  
-}
+createPassword = "";
+  for(var i = 0; i < pwlength;) {
+    poolBuild[pwlength]  
 
-}
+    if(wantsLowercase === true && wantsLowercase <= pwlength) {
+      buildPassword += alphaLower[Math.floor(Math.random() * (alphaLower.length - 1))]
+    }
+    if(wantsUppercase === true && wantsUppercase <= pwlength) {
+      buildPassword += alpaUpper[Math.floor(Math.random () * (alphaUpper - 1))]
+    }  
+    if(wantsNumeric === true && wantsNumeric <= pwlength) {
+      buildPassword += numeric[Math.floor(Math.random () * (numeric -1))]
+    }
+    if(wantsSymbol === true && wantsSymbol <= pwlength) {
+      buildPassword += symbol[Math.floor(Math.random () * (symbol -1))]
+    }  
+  }
+  
+
+
+
 
  
 
@@ -59,5 +74,5 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
 
